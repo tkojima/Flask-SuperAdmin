@@ -10,16 +10,16 @@
 
 {% block body %}
     <form method="POST" action="{{ return_url }}">
-    <h1 id="main-title">{{ _gettext('%(model)s model',model=name|capitalize) }}</h1>
+    <h1 id="main-title">{{ _gettext('%(model)s model',model=name) }}</h1>
     <a class="btn btn-primary btn-title" href="{{ url_for('.add', next=return_url) }}">{{ _gettext('Add %(model)s',model=name) }}</a>
 <!--     <div class="btn-group actions btn-title hidden">
-       
+
         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">{{ _gettext('Actions') }}<span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li> <input type="submit" name="action-delete" value="{{ _gettext('Delete') }}" /></li>
           </ul>
     </div>
- -->   
+ -->
  <select class="actions btn-title hidden" name="action" data-placeholder="{{ _gettext('Choose action') }}">
     <option value=""></option>
     <option value="delete">{{ _gettext('Delete selected') }}</option>
