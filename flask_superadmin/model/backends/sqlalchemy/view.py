@@ -17,6 +17,9 @@ class ModelAdmin(BaseModelAdmin):
         if session:
             self.session = session
         self._primary_key = self.pk_key
+        if model:
+            columns = model.__table__.columns
+            self.list_display = [c.name for c in columns]
 
     @staticmethod
     def model_detect(model):
