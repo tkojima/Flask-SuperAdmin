@@ -162,11 +162,11 @@ class BaseModelAdmin(BaseView):
 
         else:
             argcount = self.model.__init__.im_func.func_code.co_argcount
-            if argcount > 1:$
-                args = [None] * (argcount-1)$
-                form = Form(obj=self.model(*args))$
-            else:$
-                form = Form(obj=self.model())$
+            if argcount > 1:
+                args = [None] * (argcount-1)
+                form = Form(obj=self.model(*args))
+            else:
+                form = Form(obj=self.model())
 
         return self.render(self.add_template, model=self.model, form=form)
 
